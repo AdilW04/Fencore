@@ -1,20 +1,15 @@
-//answer=list of possible answers
-function Question(question, answer)
+import {Question} from "./Question.js";
+function Questions()
 {
-    this.question=question;
-    this.answer=answer;
+    this.collection=[];
 }
-Question.prototype.OutputQuestion=function()
-{
-    console.log(this.question);
-}
-Question.prototype.OutputAnswer=function()
-{
-    console.log(this.answer);
-}
+let questions= new Questions();
 function SubmitQuestion()
 {
     let question= new Question(document.getElementById("question").value,document.getElementById("answer").value);
-    question.OutputQuestion();
-    question.OutputAnswer();
+    questions.collection.push(question);
+    questions.collection[0].OutputAnswer();
+    questions.collection[0].OutputQuestion();
+
 }
+document.querySelector('button').addEventListener('click', SubmitQuestion);
