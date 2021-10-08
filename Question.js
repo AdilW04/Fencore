@@ -12,3 +12,4 @@ Question.prototype.OutputAnswer=function()
 {
     console.log(this.answer);
 }
+//bruh
